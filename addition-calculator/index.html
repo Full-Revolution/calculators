@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Addition Calculator</title>
+</head>
+<body>
+  <div>
+    <h1>Simple Addition Calculator</h1>
+  </div>
+  <div>
+    <label for="num1">First number:</label>
+    <input type="number" id="num1">
+  </div>
+  <div>
+    <label for="num2">Second number:</label>
+    <input type="number" id="num2">
+  </div>
+  <div>
+    <button type="button" onclick="calculate()">Add</button>
+  </div>
+  <div>
+    <pre id="result">Result: </pre>
+  </div>
+  <script>
+    function calculate() {
+      const n1 = parseFloat(document.getElementById('num1').value) || 0;
+      const n2 = parseFloat(document.getElementById('num2').value) || 0;
+      const sum = n1 + n2;
+      document.getElementById('result').textContent = "Result: " + sum;
+    }
+  </script>
+</body>
+</html>
