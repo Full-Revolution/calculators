@@ -12,7 +12,33 @@
       box-sizing: border-box;
     }
     body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #333;
+      background-color: #fff;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+      font-family: system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    }
+    main {
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin: .25rem auto 1.25rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    button, input, optgroup, select, textarea {
+      margin: 0;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
     }
     button, input[type="submit"] {
       align-items: center;
@@ -36,12 +62,30 @@
       transition-property: color, fill, background-color, border-color;
       user-select: none;
     }
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
     input[type="number"], input[type="text"] {
-      padding: 0.25rem .5rem;
+      display: block;
+      width: 100%;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+    .btn-action {
+      background-color: #087635;
+      color: #fff;
+      border-color: transparent;
+      box-shadow: -2px 2px 2px #0976358f;
+      font-weight: 400;
+      line-height: 1.5;
     }
     .mb-3 {
       margin-bottom: 0.75rem;
@@ -50,16 +94,6 @@
       display: flex;
       flex-direction: row;
      }
-    .col-w50 {
-      width: 100%;
-    }
-    @media screen and (min-width: 480px) {
-      .col-w50 {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-      }
-    }
     .well {
       min-height: 1.25rem;
       padding: 1.1875rem;
@@ -72,29 +106,25 @@
   </style>
 </head>
 <body>
-  <div>
-    <h1>Simple Addition Calculator</h1>
-  </div>
-  <div class="row">
-    <div class="col-w50">
-      <div class="mb-3">
-        <label for="num1">First number:</label>
-        <input type="number" id="num1">
-      </div>
-      <div class="mb-3">
-        <label for="num2">Second number:</label>
-        <input type="number" id="num2">
-      </div>
-      <div class="mb-3">
-        <button type="button" onclick="calculate()">Add Numbers</button>
-      </div>
+  <main>
+    <div>
+      <h1>Simple Addition Calculator</h1>
     </div>
-    <div class="col-w50">
-      <div class="mb-3 well">
-        <pre id="result">Result: </pre>
-      </div>
+    <div class="mb-3 well">
+      <pre id="result">Result: </pre>
     </div>
-  </div>
+    <div class="mb-3">
+      <label for="num1">First number:</label>
+      <input type="number" id="num1">
+    </div>
+    <div class="mb-3">
+      <label for="num2">Second number:</label>
+      <input type="number" id="num2">
+    </div>
+    <div class="mb-3">
+      <button type="button" class="btn-action" onclick="calculate()">Add Numbers</button>
+    </div>
+  </main>
   <script>
     function calculate() {
       const n1 = parseFloat(document.getElementById('num1').value) || 0;
