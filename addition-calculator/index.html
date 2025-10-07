@@ -105,15 +105,16 @@
       border-radius: 0.25rem;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     }
+    #result {
+      margin: 0;
+      font-family: monospace;
+    }
   </style>
 </head>
 <body>
   <main>
     <div>
       <h1>Simple Addition Calculator</h1>
-    </div>
-    <div class="mb-3 well">
-      <pre id="result">Result: </pre>
     </div>
     <div class="mb-3">
       <label for="num1">First number:</label>
@@ -123,8 +124,11 @@
       <label for="num2">Second number:</label>
       <input type="number" id="num2">
     </div>
-    <div class="mb-3">
+    <div class="mb-6">
       <button type="button" class="btn-action w-100" onclick="calculate()">Add Numbers</button>
+    </div>
+    <div class="mb-3 well">
+      <output id="result">0</pre>
     </div>
   </main>
   <script>
@@ -132,7 +136,7 @@
       const n1 = parseFloat(document.getElementById('num1').value) || 0;
       const n2 = parseFloat(document.getElementById('num2').value) || 0;
       const sum = n1 + n2;
-      document.getElementById('result').textContent = "Result: " + sum;
+      document.getElementById('result').textContent = "" + sum;
     }
   </script>
 </body>
